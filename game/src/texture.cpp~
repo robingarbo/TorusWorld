@@ -1,0 +1,11 @@
+#ifndef _DEF_AOBJECT
+#define _DEF_AOBJECT
+
+class AObject
+{
+AObject(void);
+AObject(int);
+};
+
+
+#endif // !_DEF_AOBJECT

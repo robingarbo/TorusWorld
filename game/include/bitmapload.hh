@@ -1,0 +1,20 @@
+//
+// game.hh for game in /home/robin/TorusWorld/game/include
+// 
+// Made by robin garbo
+// email   <robingarbo@gmail.com>
+// 
+// Started on  Tue Apr 30 04:33:42 2013 robin garbo
+// ##Last update Tue Apr 30 04:40:17 2013 robin garbo
+//
+
+#ifndef _DEF_BITMAPLOAD
+#define _DEF_BITMAPLOAD
+
+#include <stdio.h>
+
+unsigned int getint(FILE *fp);
+unsigned int getshort(FILE *fp);
+
+#endif
+

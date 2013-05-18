@@ -1,0 +1,52 @@
+//
+// main.cpp for projet in /home/robin
+// 
+// Made by robin garbo
+// email   <robingarbo@gmail.com>
+// 
+// Started on  Mon Apr 22 19:38:57 2013 robin garbo
+// ##Last update Fri Apr 26 02:31:05 2013 robin garbo
+//
+
+#include <iostream>
+#include <string>
+
+#include <GL/glut.h>    // Header File For The GLUT Library
+#include <GL/gl.h>	// Header File For The OpenGL32 Library
+#include <GL/glu.h>	// Header File For The GLu32 Library
+
+using namespace std;
+
+#include "game.hh"
+
+int main(int argc, char **argv)
+{
+  int window;
+  Game game;
+
+    game.SetupWorld();
+    glutInit(&argc, argv);
+ 
+    glutInitDisplayMode(GLUT_RGBA | GLUT_DOUBLE | GLUT_DEPTH | GLUT_ALPHA);
+    glutInitWindowSize(640, 480);
+    glutInitWindowPosition(0, 0);
+    window = glutCreateWindow("TorusWolrd");
+
+    // Register the function to do all our OpenGL drawing.
+    glutDisplayFunc(&DrawGLScene);
+    //glutFullScreen();
+
+    // Even if there are no events, redraw our gl scene.
+    glutIdleFunc(&DrawGLScene);
+
+    // Register the function called when our window is resized.
+    glutReshapeFunc(&ReSizeGLScene);
+
+    // Register the function called when the keyboard is pressed.
+    glutKeyboardFunc(&keyPressed);
+
+    glutSpecialFunc(&specialKeyPressed);
+	game.run();
+ 
+  return 0;
+}

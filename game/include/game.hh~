@@ -1,0 +1,98 @@
+//
+// game.hh for game in /home/robin/TorusWorld/game/include
+// 
+// Made by robin garbo
+// email   <robingarbo@gmail.com>
+// 
+// Started on  Tue Apr 30 04:33:42 2013 robin garbo
+// ##Last update Tue Apr 30 04:40:17 2013 robin garbo
+//
+
+#ifndef _DEF_GAME
+#define _DEF_GAME
+
+
+#include <GL/glut.h>    // Header File For The GLUT Library
+#include <GL/gl.h>	// Header File For The OpenGL32 Library
+#include <GL/glu.h>	// Header File For The GLu32 Library
+#include <unistd.h>     // Header file for sleeping.
+#include <stdio.h>      // Header file for standard file i/o.
+#include <stdlib.h>     // Header file for malloc/free.
+#include <math.h>       // Header file for trigonometric functions.
+#include <iostream>
+#include <string>
+
+#include "bitmapload.hh"
+#include "keyboard.hh"
+
+void keyPressed(unsigned char key, int x, int y);
+void specialKeyPressed(int key, int x, int y);
+
+
+void ReSizeGLScene(GLsizei Width, GLsizei Height);
+void DrawGLScene(void);
+void readstr(FILE *f, char *string);
+
+
+
+	
+
+/* Image type - contains height, width, and data */
+typedef struct {
+    unsigned long sizeX;
+    unsigned long sizeY;
+    char *data;
+} Image;
+
+class Game
+{
+public:
+  Game();
+  ~Game();
+  void run();
+  void SetupWorld();
+  
+private:
+  void InitGL(GLsizei Width, GLsizei Height);
+  float rad(float angle);
+  void LoadGLTextures();
+  int  ImageLoad(char *filename, Image *image);
+public:
+  int window;
+  
+  GLuint loop;             // general loop variable
+  GLuint texture[3];       // storage for 3 textures;
+  
+  int light;           // lighting on/off
+  int blend;        // blending on/off
+  
+  GLfloat xrot;            // x rotation
+  GLfloat yrot;            // y rotation
+  GLfloat xspeed;          // x rotation speed
+  GLfloat yspeed;          // y rotation speed
+
+  GLfloat walkbias;
+  GLfloat walkbiasangle;
+  
+  GLfloat lookupdown;
+  float piover180;
+  
+  float heading;
+  float xpos;
+  float zpos;
+  
+  GLfloat camx;
+  GLfloat camy;
+  GLfloat camz; // camera location.
+  GLfloat therotate;
+
+  GLfloat z;                       // depth into the screen.
+  
+  GLfloat LightAmbient[];
+  GLfloat LightDiffuse[];
+  GLfloat LightPosition[];
+  
+  GLuint filter;       // texture filtering method to use (nearest, linear, linear + mipmaps)
+};
+
+#endif

@@ -1,0 +1,53 @@
+Donc le heros se fait capturer au debut du jeux et est emprisonner dans une petite ville,
+Le but du heros est de reunir 4 compagnon pour accomplir une quete.
+la planete sur laquele il se trouve est un imance anneau avec de l'eau au milieu.
+la planete un une sorte de torus enfaite. il y a beaucoup d'eau et de montagne.
+c'est comme la terre mais avec plus de couleur.
+dans le jeux le heros choisi ca race au debut, ce qui lui permet de se retrouver quelque par sur la carte au debut.
+pour l'instant il y a que 8 race.
+le jeux ce joue en reseau, au debut pour savoir qui est le heros il y a un tirage au sort et ensuite les joueur doivent ce retrouver sur la map.
+chaque joueur a une quete bien precise.
+
+humain
+troll
+nain
+goblin
+dendro : arbre qui parle
+yordle : hamster qui parle
+elfe
+orc
+
+Le but du Jeux est de reunir 10000 pieces d'or pour pouvoir passer une nuit avec la princesse et lui voler la clef de la porte du temps 
+qui permet de retourner dans le passer pour sauver vos parents.
+l'ombre dans l'hisoire est un bandit qui veux devenir maitre de l'ocean.
+la map est grande vous avez 20 objectif : 
+
+1)
+sortir de la prison et aider la revolution en marche, vous apercevez une pencarte avec : 10000 pieces d'or pour pouvoir passer une nuit avec la princesse.
+vous connaiser l'histoire de la clef du temps. votre pere etatit forgeron votre mere bibliothequere, vous retourner chez vous chercher des armes et des livres.
+2)
+vous etes a l'oposer de la map pour aller voir la princesse donc vous parcourer la map pour recuperer vos compagnons. vous devez donnes a chaque fois un item preci
+a chaque compagnon pour qu'il rejoin votre cause. vos conpagnon peuvent aller dans l'equipe adverse si il le souhaite.
+3)
+trouver 4 Acolyte.
+
+l'Annonciateur : Acolyte du héros, il le suit et le soutient dans ses aventures. Ami(e) ou Amant(e), ce personnage est une source de motivation pour le héros.
+Ludion :	C'est le personnage comique de l'œuvre. Il fait souvent preuve de stupidité ou du moins, la feint.
+Personnage de sang froid :
+Personnage emotif :
+
+4)
+vous vous batter contre une trompe de vampire ou de loup garou pour acceder a la grande ville.
+
+5) 
+dans la grande ville vous devez la protege du sorcier si s'amuse a invoquer des serpent geant
+6)
+vous aller dans la foret vous battre contre la sorciere.
+7)
+vous aller dans de desert combattre le scorpion geant.
+8)
+dans la montagne combatre le yeti de glace.
+9)
+ 
+
+

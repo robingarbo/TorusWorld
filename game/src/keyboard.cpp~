@@ -1,0 +1,111 @@
+#include "keyboard.hh"
+
+
+/* The function called whenever a normal key is pressed. */
+void keyPressed(unsigned char key, int x, int y)
+{
+	(void)x;
+	(void)y;
+    /* avoid thrashing this procedure */
+    usleep(100);
+
+    switch (key) {
+    case ESCAPE: // kill everything.
+	/* exit the program...normal termination. */
+	exit(1);
+	break; // redundant.
+
+    case 'b':
+    case 'B': // switch the blending
+	printf("B/b pressed; blending is: %d\n", global_game->blend);
+	global_game->blend = global_game->blend ? 0 : 1;              // switch the current value of blend, between 0 and 1.
+	if (global_game->blend) {
+	    glEnable(GL_BLEND);
+	    glDisable(GL_DEPTH_TEST);
+	} else {
+	    glDisable(GL_BLEND);
+	    glEnable(GL_DEPTH_TEST);
+	}
+	printf("Blending is now: %d\n", global_game->blend);
+	break;
+
+    case 'f':
+    case 'F': // switch the filter
+	printf("F/f pressed; filter is: %d\n", global_game->filter);
+	global_game->filter++;                           // switch the current value of filter, between 0/1/2;
+	if (global_game->filter > 2) {
+	    global_game->filter = 0;
+	}
+	printf("Filter is now: %d\n", global_game->filter);
+	break;
+
+    case 'l':
+    case 'L': // switch the lighting
+	printf("L/l pressed; lighting is: %d\n", global_game->light);
+	global_game->light = global_game->light ? 0 : 1;              // switch the current value of light, between 0 and 1.
+	if (global_game->light) {
+	    glEnable(GL_LIGHTING);
+	} else {
+	    glDisable(GL_LIGHTING);
+	}
+	printf("Lighting is now: %d\n", global_game->light);
+	break;
+
+    default:
+      printf ("Key %d pressed. No action there yet.\n", key);
+      break;
+    }
+}
+
+/* The function called whenever a normal key is pressed. */
+void specialKeyPressed(int key, int x, int y)
+{
+	(void)x;
+	(void)y;
+    /* avoid thrashing this procedure */
+    usleep(100);
+
+    switch (key) {
+    case GLUT_KEY_PAGE_UP: // tilt up
+	global_game->z -= 0.2f;
+	global_game->lookupdown -= 0.2f;
+	break;
+
+    case GLUT_KEY_PAGE_DOWN: // tilt down
+	global_game->z += 0.2f;
+	global_game->lookupdown += 1.0f;
+	break;
+
+    case GLUT_KEY_UP: // walk forward (bob head)
+	global_game->xpos -= (float)sin(global_game->yrot*global_game->piover180) * 0.05f;
+	global_game->zpos -= (float)cos(global_game->yrot*global_game->piover180) * 0.05f;
+	if (global_game->walkbiasangle >= 359.0f)
+	    global_game->walkbiasangle = 0.0f;
+	else
+	    global_game->walkbiasangle+= 10;
+	global_game->walkbias = (float)sin(global_game->walkbiasangle * global_game->piover180)/20.0f;
+	break;
+
+    case GLUT_KEY_DOWN: // walk back (bob head)
+	global_game->xpos += (float)sin(global_game->yrot*global_game->piover180) * 0.05f;
+	global_game->zpos += (float)cos(global_game->yrot*global_game->piover180) * 0.05f;
+	if (global_game->walkbiasangle <= 1.0f)
+	    global_game->walkbiasangle = 359.0f;
+	else
+	    global_game->walkbiasangle-= 10;
+	global_game->walkbias = (float)sin(global_game->walkbiasangle * global_game->piover180)/20.0f;
+	break;
+
+    case GLUT_KEY_LEFT: // look left
+	global_game->yrot += 1.5f;
+	break;
+
+    case GLUT_KEY_RIGHT: // look right
+	global_game->yrot -= 1.5f;
+	break;
+
+    default:
+	printf ("Special key %d pressed. No action there yet.\n", key);
+	break;
+    }
+}

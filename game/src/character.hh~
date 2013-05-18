@@ -1,0 +1,18 @@
+//
+// coplien.hh for project in /home/robin
+// 
+// Made by robin garbo
+// email   <robingarbo@gmail.com>
+// 
+// Started on  Mon Apr 22 20:03:04 2013 robin garbo
+// ##Last update Fri Apr 26 01:40:28 2013 robin garbo
+//
+
+class Character
+{
+public:
+  Character();
+  Character(const Character&); //copy constructor
+  ~Character();
+  Character &operator=(const Character&); //affectation operator
+};
